@@ -1,0 +1,25 @@
+.back {
+    width: 12em;
+    height: 3em;
+}
+
+.quote {
+    font-size: large;
+    font-weight: 600;
+    padding: 24px
+   
+}
+
+.like {
+    font-size: medium;
+    font-weight: 500;
+    color: gray
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    flex: 1 0 300px;
+    margin: 23px;
+    min-height: 8em;
+}

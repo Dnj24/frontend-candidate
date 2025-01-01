@@ -1,6 +1,30 @@
-<p>
-    Implement search in this component
-</p>
-<p>
-    Implement details in the <a [routerLink]="['/details/123']">details component</a>
-</p>
+<div class="container">
+  <div>
+    <input type="text" placeholder="Name" (keydown)="callSearch($event)" [formControl]="name" class="name" />
+  </div>
+  <div>
+    <select
+      class="favorite-color"
+      name="favoriteColor"
+      [formControl]="favoriteColor"
+    >
+      <option value="blue">Blue</option>
+      <option value="red">Red</option>
+      <option value="green">Green</option>
+    </select>
+  </div>
+  <div>
+    <button type="submit" class="search" (click)="search()">Search</button>
+  </div>
+</div>
+<div *ngIf="searched">
+  <h1>Search Results</h1>
+  <div class="card-container">
+    <div class="card" *ngFor="let name of names" (click)="routeToDetails(name)" >
+      <h1 *ngIf="names.length > 0" class="name-search">{{ name }}</h1>
+    </div>
+    <div *ngIf="!names.length > 0">
+        <h1>No Results Found</h1>
+    </div>
+  </div>
+</div>

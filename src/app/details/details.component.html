@@ -1,6 +1,20 @@
 <div>
-    Implement details in this component.
+    <button (click)="goBack()" class="back">Back to search results</button>
 </div>
-<p>
-    Implement search in the <a [routerLink]="['/']">search component</a>
-</p>
+<br>
+<div>
+    <h1>{{name}}</h1>
+    <br>
+    <h2>Favorite Color: {{favoriteColor}}</h2>
+    <br>
+    <div class="card" *ngFor="let quote of returnQuoteArr">
+        <div class="quote">
+            "{{quote.quote}}" 
+        </div>
+        <div class="like">
+             {{quote.likes}}
+        </div>
+       
+    </div>
+</div>
+
