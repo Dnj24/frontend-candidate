@@ -28,7 +28,10 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedId = Number(this.route.snapshot.paramMap.get('id'));
+    this.getDetails()
+  }
 
+  getDetails(){
     this.searchDetails.getDetailsData(this.selectedId).subscribe(data => {
       this.detailsData = data
 
@@ -59,7 +62,6 @@ export class DetailsComponent implements OnInit {
      this.returnQuoteArr.sort((a, b) => b.likes - a.likes) //sorted descending by the number of likes
      this.returnQuoteArr.sort((a,b) => a.quote.localeCompare(b.quote)) //sorted ascending alphabetically
     })
-
   }
 
   goBack() {
